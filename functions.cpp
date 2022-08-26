@@ -14,7 +14,7 @@ int customPuts(char *s) {
     return '\n';
 }
 
-char* customStrchr(char *s, char c) {
+char *customStrchr(char *s, char c) {
     assert(s);
 
     int i = 0;
@@ -37,4 +37,40 @@ int customStrlen(char *s) {
         ;
 
     return --i;
+}
+
+char *customStrcpy(char *s, char *t) {
+    assert(s && t);
+
+    char *res = s;
+
+    while ((*s = *t) != '\0' ) {
+        s++;
+        t++;
+    }
+
+    return res;
+}
+
+char *customStrncpy(char *s, char *t, int n) {
+    assert(s && t);
+
+    char *res = s;
+    int i = 0;
+
+    while((s[i] = t[i]) != '\0' && ++i < n)
+        ;
+
+    s[i] = '\0';
+
+    return res;
+}
+
+int customStrcat(char *s, char *t) {
+    assert(s && t);
+
+    int lens = 0
+    lens = customStrlen(s);
+
+
 }
