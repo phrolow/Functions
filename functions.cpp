@@ -27,3 +27,14 @@ char* customStrchr(char *s, char c) {
 
     return NULL;
 }
+
+int customStrlen(char *s) {
+    assert(s);
+
+    int i = 0;
+
+    while(s[i++] != '\0')
+        ;
+
+    return --i;
+}

@@ -3,9 +3,10 @@
 
 #include <stdio.h>
 #include <assert.h>
+#include <TXLib.h>
 
 int customPuts(char *s);                            //Функция puts() выводит строку, указанную str, на стандартное устройство вывода. Нуль в кон­це строки транслируется в новую строку. Функция puts() возвращает символ «новая строка» в случае успеха и EOF — при неудаче.
-char* customStrchr(char *s, char *c);               // возвращает указатель на первое появление символа c в s или, если c нет в s, NULL
+char* customStrchr(char *s, char c);               // возвращает указатель на первое появление символа c в s или, если c нет в s, NULL
 int customStrlen(char *str);                        // возвращает длину s.
 int customStrcpy(char *s, char *t);                 // копирует t в s
 int customStrncpy(char *s, char *t, int n);         // копирует не более n символов из t в s

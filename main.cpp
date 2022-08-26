@@ -1,7 +1,13 @@
 #include "functions.h"
 
 int main() {
-    customPuts("aboba");
+    puts("aboba");
+
+    char* s = "ZVZVZVZV";
+    printf("%c\n", *customStrchr(s, 'V'));
+    printf("%d\n", customStrchr(s, 'z') == NULL);
+
+    printf("%d\n", customStrlen("ass"));
 
     getchar();
 
