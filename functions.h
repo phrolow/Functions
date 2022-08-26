@@ -12,7 +12,7 @@ char *customStrchr(char *s, char c);                // возвращает ук
 int customStrlen(char *str);                        // возвращает длину s.
 char *customStrcpy(char *s, char *t);               // копирует t в s
 char *customStrncpy(char *s, char *t, int n);       // копирует не более n символов из t в s
-int customStrcat(char *s, char *t);                 // приписывает t в конец s
+char *customStrcat(char *s, char *t);                 // приписывает t в конец s
 char *customFgets(char *s, int n, FILE *stream);    // fgets читает не более n-1 символов в массив s, прекращая чтение, если встретился символ новой строки, который включается в массив; кроме того, записывает в массив '\0'. Функция fgets возвращает s или, если исчерпан файл или обнаружена ошибка, NULL.
 char *customStrdup(char *);                         // путем обращения к функции malloc() выделяет память, достаточную для хранения дубликата строки, на которую указывает str, а затем производит копирование этой строки в выделенную область и возвращает указатель на нее.
 int getline (char **string, int *n, FILE *stream);  // потом

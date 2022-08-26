@@ -44,10 +44,8 @@ char *customStrcpy(char *s, char *t) {
 
     char *res = s;
 
-    while ((*s = *t) != '\0' ) {
-        s++;
-        t++;
-    }
+    while ((*(s++) = *(t++)) != '\0' )
+        ;
 
     return res;
 }
@@ -66,11 +64,29 @@ char *customStrncpy(char *s, char *t, int n) {
     return res;
 }
 
-int customStrcat(char *s, char *t) {
+char *customStrcat(char *s, char *t) {
     assert(s && t);
 
-    int lens = 0
+    int lens = 0,
+        i = 0;
+
     lens = customStrlen(s);
 
+    while((*(s + lens + (i++)) = *(t++)) != '\0')
+        ;
 
+    return s;
+}
+
+char *customFgets(char *s, int n, FILE *stream) {
+    assert(s && stream);
+
+    int i = 0;
+
+    while(i < n && (*(s + (i++)) = getc(stream)) != EOF)
+        ;
+
+    *(s + i) = '\0';
+
+    return s;
 }

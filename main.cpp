@@ -5,6 +5,7 @@ int main() {
 
     char s[MAXLINE] = "ZVZVZVZV",
          t[MAXLINE] = "Meine ehre heist treue";
+    FILE *fp = fopen("Y:\\gthb\\Functions\\file.txt", "r");
 
     printf("%c\n", *customStrchr(s, 'V'));
     printf("%d\n", customStrchr(s, 'z') == NULL);
@@ -16,6 +17,13 @@ int main() {
 
     customStrncpy(s, "aboba", 3);
     printf("%s\n", s);
+
+    customStrcat(s, t);
+    printf("%s\n", s);
+
+    customFgets(s, 3, fp);
+    printf("%s\n", s);
+    fclose(fp);
 
     getchar();
 
