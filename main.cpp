@@ -4,7 +4,8 @@ int main() {
     customPuts("aboba");
 
     char s[MAXLINE] = "ZVZVZVZV",
-         t[MAXLINE] = "Meine ehre heist treue";
+         t[MAXLINE] = "Meine ehre heist treue",
+         *w;
     FILE *fp = fopen("Y:\\gthb\\Functions\\file.txt", "r");
 
     printf("%c\n", *customStrchr(s, 'V'));
@@ -24,6 +25,9 @@ int main() {
     customFgets(s, 3, fp);
     printf("%s\n", s);
     fclose(fp);
+
+    w = customStrdup(s);
+    printf("%s\n", w);
 
     getchar();
 

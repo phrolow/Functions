@@ -90,3 +90,20 @@ char *customFgets(char *s, int n, FILE *stream) {
 
     return s;
 }
+
+char *customStrdup(char *s) {
+    assert(s);
+
+    int slen = 0;
+    slen = customStrlen(s);
+
+    char *scopy = (char*) malloc(slen + 1);
+    customStrcpy(scopy, s);
+
+    return scopy;
+}
+
+int getline (char **string, int *n, FILE *stream) {
+
+}
+
