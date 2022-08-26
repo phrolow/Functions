@@ -1,7 +1,7 @@
 #include "functions.h"
 
 int main() {
-    printf(customPuts("aboba"));
+    customPuts("aboba");
 
     getchar();
 
