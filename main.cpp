@@ -1,5 +1,9 @@
 #include "functions.h"
 
 int main() {
-  return 0;
- }
+    printf(customPuts("aboba"));
+
+    getchar();
+
+    return 0;
+}
