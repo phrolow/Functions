@@ -111,10 +111,10 @@ int customGetline (char **s, int *n, FILE *stream) {
     char c = EOF;
 
     while(i < *n && (c = getc(stream)) != '\n' && c != EOF) {
-        *s[i++] = c;
+        (*s)[i++] = c;
     }
 
-    *s[i] = '\0';
+    (*s)[i] = '\0';
 
     return i;
 }
