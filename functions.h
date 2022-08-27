@@ -14,7 +14,7 @@ int customPuts(const char *s);
 char *customStrchr(const char *s, int c);
 size_t customStrlen(const char *str);
 char *customStrcpy(char *s, const char *t);
-char *customStrncpy(char *s, char *t, int n);
+char *customStrncpy(char *dest, const char *source, size_t n);
 char *customStrcat(char *s, char *t);
 char *customFgets(char *s, int n, FILE *stream);
 char *customStrdup(char *s);

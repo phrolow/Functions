@@ -19,11 +19,15 @@ int main() {
     customStrcpy(s, "bababa");
     printf("%s\n", s);
 
-    /* printf("\nstrncpy\n");
+    printf("\nstrncpy\n");
     customStrncpy(s, "aboba", 3);
     printf("%s\n", s);
+    customStrncpy(s, "Z", 4);
+    printf("%s\n", s);
+    customStrncpy(s, "Meine ehre heist treue", 47);
+    printf("%s\n", s);
 
-    printf("\nstrcat\n");
+/*    printf("\nstrcat\n");
     customStrcat(s, t);
     printf("%s\n", s);
 

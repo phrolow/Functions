@@ -23,7 +23,7 @@ char *customStrchr(const char *str, int ch) {
 size_t customStrlen(const char *s) {
     assert(s);
 
-    int i = 0;
+    size_t i = 0;
 
     while(s[i] != '\0')
         i++;
@@ -45,20 +45,26 @@ char *customStrcpy(char *s, const char *t) {
     return s;
 }
 
-/* char *customStrncpy(char *s, char *t, int n) {
-    assert(s && t);
+char *customStrncpy(char *dest, const char *source, size_t n) {
+    assert(dest && source);
 
-    int i = 0;
+    size_t i = 0;
 
-    while((s[i] = t[i]) != '\0' && ++i < n)
-        ;
+    while(i < n || source[i] != '\0') {
+        dest[i] = source[i];
+        i++;
+    }
 
-    s[i] = '\0';
+    while(i < n) {
+        dest[i] = '\0';
+        i++;
+    }
 
-    return s;
+    return dest;
+
 }
 
-char *customStrcat(char *s, char *t) {
+/* char *customStrcat(char *s, char *t) {
     assert(s && t);
 
     int lens = 0,
