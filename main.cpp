@@ -3,10 +3,13 @@
 int main() {
     customPuts("aboba");
 
-    char s[MAXLINE] = "ZVZVZVZV",
+    char *buffer = NULL,
+         s[MAXLINE] = "ZVZVZVZV",
          t[MAXLINE] = "Meine ehre heist treue",
-         *w;
-    FILE *fp = fopen("Y:\\gthb\\Functions\\file.txt", "r");
+         *w = NULL;
+    int bufsize = 0,
+        numinput = 0;
+    FILE *fp = NULL;
 
     printf("%c\n", *customStrchr(s, 'V'));
     printf("%d\n", customStrchr(s, 'z') == NULL);
@@ -22,13 +25,19 @@ int main() {
     customStrcat(s, t);
     printf("%s\n", s);
 
-    customFgets(s, 3, fp);
+    fp = fopen("Y:\\gthb\\Functions\\file.txt", "r");
+    customFgets(s, 7, fp);
     printf("%s\n", s);
-    fclose(fp);
 
     w = customStrdup(s);
     printf("%s\n", w);
 
+    bufsize = 64;
+    buffer = (char *)malloc(bufsize * sizeof(char));
+    numinput = customGetline(&buffer, &bufsize, stdin);
+    printf("%d chars: %s\n", numinput, buffer);
+
+    fclose(fp);
     getchar();
 
     return 0;

@@ -53,7 +53,6 @@ char *customStrcpy(char *s, char *t) {
 char *customStrncpy(char *s, char *t, int n) {
     assert(s && t);
 
-    char *res = s;
     int i = 0;
 
     while((s[i] = t[i]) != '\0' && ++i < n)
@@ -61,7 +60,7 @@ char *customStrncpy(char *s, char *t, int n) {
 
     s[i] = '\0';
 
-    return res;
+    return s;
 }
 
 char *customStrcat(char *s, char *t) {
@@ -95,15 +94,28 @@ char *customStrdup(char *s) {
     assert(s);
 
     int slen = 0;
+    char *scopy = NULL;
+
     slen = customStrlen(s);
 
-    char *scopy = (char*) malloc(slen + 1);
+    scopy = (char*)malloc((slen + 1) * sizeof(char));
     customStrcpy(scopy, s);
 
     return scopy;
 }
 
-int getline (char **string, int *n, FILE *stream) {
+int customGetline (char **s, int *n, FILE *stream) {
+    assert(s && *s && n && stream);
 
+    int i = 0;
+    char c = EOF;
+
+    while(i < *n && (c = getc(stream)) != '\n' && c != EOF) {
+        *s[i++] = c;
+    }
+
+    *s[i] = '\0';
+
+    return i;
 }
 
