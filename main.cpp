@@ -1,6 +1,8 @@
 #include "functions.h"
 
 int main() {
+    char s[] = "bebebe";
+
     printf("puts\n");
     printf("%c", customPuts("aboba"));
     customPuts("ass");
@@ -10,14 +12,14 @@ int main() {
     printf("%d\n", customStrchr("ZV", 'z') == NULL);
     printf("%c\n", *(customStrchr("PIZDA", 'Z') + 1));
 
-    /* printf("\nstrlen\n");
+    printf("\nstrlen\n");
     printf("%d\n", customStrlen("ass"));
 
     printf("\nstrcpy\n");
-    customStrcpy(s, t);
+    customStrcpy(s, "bababa");
     printf("%s\n", s);
 
-    printf("\nstrncpy\n");
+    /* printf("\nstrncpy\n");
     customStrncpy(s, "aboba", 3);
     printf("%s\n", s);
 

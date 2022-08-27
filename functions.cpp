@@ -20,29 +20,32 @@ char *customStrchr(const char *str, int ch) {
     return NULL;
 }
 
-/* size_t customStrlen(char *s) {
+size_t customStrlen(const char *s) {
     assert(s);
 
     int i = 0;
 
-    while(s[i++] != '\0')
-        ;
+    while(s[i] != '\0')
+        i++;
 
-    return --i;
+    return i;
 }
 
-char *customStrcpy(char *s, char *t) {
+char *customStrcpy(char *s, const char *t) {
     assert(s && t);
+    assert(strlen(s) >= strlen(t));
 
-    char *res = s;
+    int i = 0;
 
-    while ((*(s++) = *(t++)) != '\0' )
-        ;
+    while((s[i] = t[i]) != '\0')
+        i++;
 
-    return res;
+    s[i] = '\0';
+
+    return s;
 }
 
-char *customStrncpy(char *s, char *t, int n) {
+/* char *customStrncpy(char *s, char *t, int n) {
     assert(s && t);
 
     int i = 0;
