@@ -11,7 +11,7 @@
 const int MAXLINE = 1000;
 
 int customPuts(const char *s);
-char *customStrchr(char *s, char c);
+char *customStrchr(const char *s, int c);
 int customStrlen(char *str);
 char *customStrcpy(char *s, char *t);
 char *customStrncpy(char *s, char *t, int n);

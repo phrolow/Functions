@@ -1,22 +1,16 @@
 #include "functions.h"
 
 int main() {
-    char *buffer = NULL,
-         s[MAXLINE] = "ZVZVZVZV",
-         t[MAXLINE] = "Meine ehre heist treue",
-         *w = NULL;
-    int bufsize = 0,
-        numinput = 0;
-    FILE *fp = NULL;
-
+    printf("puts\n");
     printf("%c", customPuts("aboba"));
     customPuts("ass");
 
-    /* printf("strchr\n");
-    printf("%c\n", *customStrchr(s, 'V'));
-    printf("%d\n", customStrchr(s, 'z') == NULL);
+    printf("\nstrchr\n");
+    printf("%c\n", *customStrchr("ZVZVZV", 'V'));
+    printf("%d\n", customStrchr("ZV", 'z') == NULL);
+    printf("%c\n", *(customStrchr("PIZDA", 'Z') + 1));
 
-    printf("\nstrlen\n");
+    /* printf("\nstrlen\n");
     printf("%d\n", customStrlen("ass"));
 
     printf("\nstrcpy\n");
@@ -47,6 +41,7 @@ int main() {
     printf("%d chars: %s\n", numinput, buffer);
 
     fclose(fp); */
+
     getchar();
 
     return 0;

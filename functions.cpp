@@ -1,6 +1,6 @@
 #include "functions.h"
 
-int customPuts(const char *s) {                                 //переводит на новую строку
+int customPuts(const char *s) {
     while(*s != '\0')
         if(putchar(*(s++)) != EOF)
             ;
@@ -10,21 +10,17 @@ int customPuts(const char *s) {                                 //перевод
     return putchar('\n');
 }
 
-/* char *customStrchr(char *s, int c) {             //неявные приведения мб
-    assert(s);
-
-    int i = 0;
-
-    while(s[i] != '\0')
-        if(s[i] == c)
-            return s + i;
+char *customStrchr(const char *str, int ch) {
+    while(*str != '\0')
+        if(*str == ch)
+            return (char*) str;
         else
-            i++;
+            str++;
 
     return NULL;
 }
 
-size_t customStrlen(char *s) {
+/* size_t customStrlen(char *s) {
     assert(s);
 
     int i = 0;
