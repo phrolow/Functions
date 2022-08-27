@@ -64,21 +64,25 @@ char *customStrncpy(char *dest, const char *source, size_t count) {
 
 }
 
-/* char *customStrcat(char *s, char *t) {
-    assert(s && t);
+char *customStrcat(char *str1, const char *str2) {
+    assert(str1 && str2);
 
-    int lens = 0,
-        i = 0;
+    size_t  str1Len = 0,
+            i = 0;
 
-    lens = customStrlen(s);
+    str1Len = strlen(str1);
 
-    while((*(s + lens + (i++)) = *(t++)) != '\0')
-        ;
+    while(str2[i] != '\0') {
+        str1[str1Len + i] = str2[i];
+        i++;
+    }
 
-    return s;
+    str1[str1Len + i] = '\0';
+
+    return str1;
 }
 
-char *customFgets(char *s, int n, FILE *stream) {
+/* char *customFgets(char *s, int n, FILE *stream) {
     assert(s && stream);
 
     int i = 0;

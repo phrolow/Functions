@@ -15,7 +15,7 @@ char *customStrchr(const char *s, int c);
 size_t customStrlen(const char *str);
 char *customStrcpy(char *s, const char *t);
 char *customStrncpy(char *dest, const char *source, size_t n);
-char *customStrcat(char *s, char *t);
+char *customStrcat(char *str1, const char *str2);
 char *customFgets(char *s, int n, FILE *stream);
 char *customStrdup(char *s);
 int customGetline (char **string, int *n, FILE *stream);

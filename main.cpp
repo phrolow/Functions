@@ -27,11 +27,11 @@ int main() {
     customStrncpy(s, "Meine ehre heist treue", 47);
     printf("%s\n", s);
 
-/*    printf("\nstrcat\n");
-    customStrcat(s, t);
+    printf("\nstrcat\n");
+    customStrcat(s, "pizda");
     printf("%s\n", s);
 
-    printf("\nfgets\n");
+/*  printf("\nfgets\n");
     fp = fopen("Y:\\gthb\\Functions\\file.txt", "r");
     customFgets(s, 7, fp);
     printf("%s\n", s);
