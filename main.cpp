@@ -2,6 +2,7 @@
 
 int main() {
     char s[] = "bebebe";
+    FILE *fp = NULL;
 
     printf("puts\n");
     printf("%c", customPuts("aboba"));
@@ -31,12 +32,12 @@ int main() {
     customStrcat(s, "pizda");
     printf("%s\n", s);
 
-/*  printf("\nfgets\n");
+    printf("\nfgets\n");
     fp = fopen("Y:\\gthb\\Functions\\file.txt", "r");
     customFgets(s, 7, fp);
     printf("%s\n", s);
 
-    printf("\nstrdup\n");
+/*  printf("\nstrdup\n");
     w = customStrdup(s);
     printf("%s\n", w);
 
@@ -44,9 +45,9 @@ int main() {
     bufsize = 64;
     buffer = (char *)malloc(bufsize * sizeof(char));
     numinput = customGetline(&buffer, &bufsize, fp);
-    printf("%d chars: %s\n", numinput, buffer);
+    printf("%d chars: %s\n", numinput, buffer);  */
 
-    fclose(fp); */
+    fclose(fp);
 
     getchar();
 

@@ -82,20 +82,23 @@ char *customStrcat(char *str1, const char *str2) {
     return str1;
 }
 
-/* char *customFgets(char *s, int n, FILE *stream) {
+char *customFgets(char *s, int n, FILE *stream) {
     assert(s && stream);
 
     int i = 0;
 
-    while(i < n && (*(s + (i++)) = getc(stream)) != EOF)
-        ;
+    while(i < (n - 1) && (s[i] = (char) getc(stream)) != EOF && !ferror(stream))
+        i++;
 
-    *(s + i) = '\0';
+    s[i] = '\0';
 
-    return s;
+    if(i == (n - 1))
+        return s;
+
+    return NULL;
 }
 
-char *customStrdup(char *s) {
+/* char *customStrdup(char *s) {
     assert(s);
 
     int slen = 0;
