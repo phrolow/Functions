@@ -3,13 +3,14 @@
 #define _GNU_SOURCE
 
 #include <stdio.h>
+#include <string.h>
 #include <stdlib.h>
 #include <assert.h>
 #include <TXLib.h>
 
 const int MAXLINE = 1000;
 
-int customPuts(char *s);
+int customPuts(const char *s);
 char *customStrchr(char *s, char c);
 int customStrlen(char *str);
 char *customStrcpy(char *s, char *t);

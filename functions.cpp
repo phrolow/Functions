@@ -1,20 +1,16 @@
 #include "functions.h"
 
-int customPuts(char *s) {
-    assert(s);
-
-    int i = 0;
-
-    while(s[i] != '\0')
-        if(putchar(s[i++]) != EOF)
+int customPuts(const char *s) {                                 //переводит на новую строку
+    while(*s != '\0')
+        if(putchar(*(s++)) != EOF)
             ;
         else
             return EOF;
 
-    return '\n';
+    return putchar('\n');
 }
 
-char *customStrchr(char *s, char c) {
+/* char *customStrchr(char *s, int c) {             //неявные приведения мб
     assert(s);
 
     int i = 0;
@@ -28,7 +24,7 @@ char *customStrchr(char *s, char c) {
     return NULL;
 }
 
-int customStrlen(char *s) {
+size_t customStrlen(char *s) {
     assert(s);
 
     int i = 0;
@@ -104,7 +100,8 @@ char *customStrdup(char *s) {
     return scopy;
 }
 
-int customGetline (char **s, int *n, FILE *stream) {
+int customGetline (char **s, int *n, FILE *stream) {                                  //realloc calloc
+                                                                                      //malloc calloc кр
     assert(s && *s && n && stream);
 
     int i = 0;
@@ -118,4 +115,4 @@ int customGetline (char **s, int *n, FILE *stream) {
 
     return i;
 }
-
+    */

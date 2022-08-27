@@ -1,8 +1,6 @@
 #include "functions.h"
 
 int main() {
-    customPuts("aboba");
-
     char *buffer = NULL,
          s[MAXLINE] = "ZVZVZVZV",
          t[MAXLINE] = "Meine ehre heist treue",
@@ -11,7 +9,10 @@ int main() {
         numinput = 0;
     FILE *fp = NULL;
 
-    printf("strchr\n");
+    printf("%c", customPuts("aboba"));
+    customPuts("ass");
+
+    /* printf("strchr\n");
     printf("%c\n", *customStrchr(s, 'V'));
     printf("%d\n", customStrchr(s, 'z') == NULL);
 
@@ -45,7 +46,7 @@ int main() {
     numinput = customGetline(&buffer, &bufsize, fp);
     printf("%d chars: %s\n", numinput, buffer);
 
-    fclose(fp);
+    fclose(fp); */
     getchar();
 
     return 0;
