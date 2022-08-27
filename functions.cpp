@@ -45,17 +45,17 @@ char *customStrcpy(char *s, const char *t) {
     return s;
 }
 
-char *customStrncpy(char *dest, const char *source, size_t n) {
+char *customStrncpy(char *dest, const char *source, size_t count) {
     assert(dest && source);
 
     size_t i = 0;
 
-    while(i < n || source[i] != '\0') {
+    while(i < count || source[i] != '\0') {
         dest[i] = source[i];
         i++;
     }
 
-    while(i < n) {
+    while(i < count) {
         dest[i] = '\0';
         i++;
     }
