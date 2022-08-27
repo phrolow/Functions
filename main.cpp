@@ -33,7 +33,7 @@ int main() {
     printf("%s\n", s);
 
     printf("\nfgets\n");
-    fp = fopen("Y:\\gthb\\Functions\\file.txt", "r");
+    fp = fopen("file.txt", "r");
     customFgets(s, 7, fp);
     printf("%s\n", s);
 
