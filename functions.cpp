@@ -118,9 +118,6 @@ char *customStrdup(const char *s) {
 }
 
 ssize_t customGetline (char **lineptr, size_t *n, FILE *stream) {
-    /* реализация говна
-    по крайней мере памяти не такой пиздец как если все время юзать realloc */
-
     if(n == NULL)
         return -1;
 
