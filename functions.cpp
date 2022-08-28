@@ -10,10 +10,10 @@ int customPuts(const char *s) {
     return putchar('\n');
 }
 
-char *customStrchr(const char *str, int ch) {
+const char *customStrchr(const char *str, int ch) {
     while(*str != '\0')
         if(*str == ch)
-            return (char*) str;
+            return str;
         else
             str++;
 
@@ -21,8 +21,6 @@ char *customStrchr(const char *str, int ch) {
 }
 
 size_t customStrlen(const char *s) {
-    assert(s);
-
     size_t i = 0;
 
     while(s[i] != '\0')
@@ -33,7 +31,6 @@ size_t customStrlen(const char *s) {
 
 char *customStrcpy(char *s, const char *t) {
     assert(s && t);
-    assert(strlen(s) >= strlen(t));
 
     int i = 0;
 
@@ -46,8 +43,6 @@ char *customStrcpy(char *s, const char *t) {
 }
 
 char *customStrncpy(char *dest, const char *source, size_t count) {
-    assert(dest && source);
-
     size_t i = 0;
 
     while(i < count || source[i] != '\0') {
@@ -62,6 +57,20 @@ char *customStrncpy(char *dest, const char *source, size_t count) {
 
     return dest;
 
+}
+
+int customStrcmp(const char *str1, const char *str2) {
+    do {
+        if(*str1 > *str2) {
+            return 1;
+        } else if(*str1 < *str2) {
+            return -1;
+        }
+
+        str2++;
+    } while(*(str1++) != '\0');
+
+    return 0;
 }
 
 char *customStrcat(char *str1, const char *str2) {
@@ -83,8 +92,6 @@ char *customStrcat(char *str1, const char *str2) {
 }
 
 char *customFgets(char *s, int n, FILE *stream) {
-    assert(s && stream);
-
     int i = 0;
 
     while(i < (n - 1) && (s[i] = (char) getc(stream)) != EOF && !ferror(stream))
@@ -98,21 +105,19 @@ char *customFgets(char *s, int n, FILE *stream) {
     return NULL;
 }
 
-/* char *customStrdup(char *s) {
-    assert(s);
+char *customStrdup(const char *s) {
+    size_t sLen = 0;
+    char *sCopy = NULL;
 
-    int slen = 0;
-    char *scopy = NULL;
+    sLen = strlen(s);
+    sCopy = (char*)calloc(sLen + 1, sizeof(char));
 
-    slen = customStrlen(s);
+    strcpy(sCopy, s);
 
-    scopy = (char*)malloc((slen + 1) * sizeof(char));
-    customStrcpy(scopy, s);
-
-    return scopy;
+    return sCopy;
 }
 
-int customGetline (char **s, int *n, FILE *stream) {                                  //realloc calloc
+/* int customGetline (char **s, int *n, FILE *stream) {                                  //realloc calloc
                                                                                       //malloc calloc кр
     assert(s && *s && n && stream);
 

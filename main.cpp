@@ -1,7 +1,8 @@
 #include "functions.h"
 
 int main() {
-    char s[] = "bebebe";
+    char s[] = "bebebe",
+         *p = NULL;
     FILE *fp = NULL;
 
     printf("puts\n");
@@ -28,6 +29,12 @@ int main() {
     customStrncpy(s, "Meine ehre heist treue", 47);
     printf("%s\n", s);
 
+    printf("\nstrcmp\n");
+    printf("%d\n", customStrcmp("ab", "ba"));
+    printf("%d\n", customStrcmp("ab", "ab"));
+    printf("%d\n", customStrcmp("ab", "a"));
+    printf("%d\n", customStrcmp("a", "ab"));
+
     printf("\nstrcat\n");
     customStrcat(s, "pizda");
     printf("%s\n", s);
@@ -37,19 +44,19 @@ int main() {
     customFgets(s, 7, fp);
     printf("%s\n", s);
 
-/*  printf("\nstrdup\n");
-    w = customStrdup(s);
-    printf("%s\n", w);
+    printf("\nstrdup\n");
+    p = customStrdup("shit");
+    printf("%s\n", p);
 
-    printf("\ngetline\n");
+/*  printf("\ngetline\n");
     bufsize = 64;
     buffer = (char *)malloc(bufsize * sizeof(char));
     numinput = customGetline(&buffer, &bufsize, fp);
     printf("%d chars: %s\n", numinput, buffer);  */
 
-    fclose(fp);
-
     getchar();
+
+    fclose(fp);
 
     return 0;
 }
