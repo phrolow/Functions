@@ -2,7 +2,10 @@
 
 int main() {
     char s[] = "bebebe",
-         *p = NULL;
+         *p = NULL,
+         *buffer = NULL;
+    size_t bufsize = 0;
+    ssize_t numinput = 0;
     FILE *fp = NULL;
 
     printf("puts\n");
@@ -48,11 +51,11 @@ int main() {
     p = customStrdup("shit");
     printf("%s\n", p);
 
-/*  printf("\ngetline\n");
+    printf("\ngetline\n");
     bufsize = 64;
     buffer = (char *)malloc(bufsize * sizeof(char));
     numinput = customGetline(&buffer, &bufsize, fp);
-    printf("%d chars: %s\n", numinput, buffer);  */
+    printf("%d chars: %s\n", numinput, buffer);
 
     getchar();
 

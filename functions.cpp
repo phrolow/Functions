@@ -117,19 +117,37 @@ char *customStrdup(const char *s) {
     return sCopy;
 }
 
-/* int customGetline (char **s, int *n, FILE *stream) {                                  //realloc calloc
-                                                                                      //malloc calloc кр
-    assert(s && *s && n && stream);
+ssize_t customGetline (char **lineptr, size_t *n, FILE *stream) {
+    /* реализация говна
+    по крайней мере памяти не такой пиздец как если все время юзать realloc */
 
-    int i = 0;
-    char c = EOF;
+    if(n == NULL)
+        return -1;
 
-    while(i < *n && (c = getc(stream)) != '\n' && c != EOF) {
-        (*s)[i++] = c;
+    char inp[MAXLINE] = {};
+    ssize_t i = 0;
+    size_t inpLen = 0;
+
+    while((inp[i] = (char) getc(stream)) != EOF && inp[i] != '\n')
+        i++;
+
+    inp[i] = '\n';
+    inp[i + 1] = '\0';
+
+    inpLen = (size_t) i + 1;
+
+    if(*lineptr == NULL && *n == 0)
+        *lineptr = (char *)malloc((inpLen + 1) * sizeof(char));
+
+    if(inpLen + 1 > *n) {
+        *lineptr = (char *)realloc(*lineptr, (inpLen + 1) * sizeof(char));
+        *n = inpLen + 1;
     }
 
-    (*s)[i] = '\0';
+    strcpy(*lineptr, inp);
 
-    return i;
+    if(ferror(stream) || (feof(stream) && i == 0))
+        return -1;
+
+    return i + 1;
 }
-    */

@@ -19,15 +19,5 @@ int customStrcmp(const char *str1, const char *str2);
 char *customStrcat(char *str1, const char *str2);
 char *customFgets(char *s, int n, FILE *stream);
 char *customStrdup(const char *s);
-int customGetline (char **string, int *n, FILE *stream);
-
+ssize_t customGetline (char **lineptr, size_t *n, FILE *stream);
 #endif
-
-/*
-strlen
-strcpy
-strchr
-strcmp
-strcat
-сначало картинка потом функция
-*/
